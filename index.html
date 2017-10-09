@@ -16,7 +16,7 @@
 <body>
     <div class="jumbotron">
         <div class="container">
-            <h1 class="white">Guía del Curso de Introdución a la Terminal y Línea de Comandos</h1>
+            <h1 class="white">Guía del Curso de Introducción a la Terminal y Línea de Comandos</h1>
         </div>
     </div>
 
@@ -27,25 +27,139 @@
             <!-- Lista desordenada -->
             <ul>
             <li><strong><kbd>pwd</kbd></strong> Muestra la ubicación, la ruta del directorio donde se encuentra posicionado.</li>
-            <li><strong><kbd>~</kbd></strong> Significa (es la) "Home"</li>
+            <li><strong><kbd>~</kbd></strong> Es la "Home" del usuario.</li>
             <p><strong>Nota:</strong> Escribir <strong><kbd>cd</kbd></strong> en la terminal (no importa el lugar donde se encuentre) lo llevará a la <strong>home</strong>, sino tenemos <strong><kbd>~</kbd></strong></p>
-            <li><strong><kbd>/</kbd></strong> Es la "Raíz" del Sistema Operativo</li>
+            <li><strong><kbd>/</kbd></strong> Es la "Raíz" del Sistema Operativo.</li>
             <li><strong><kbd>ls</kbd></strong> Lista los archivos o carpetas (del directorio donde se encuentra al momento de ejecutar el comando)
                 <!-- Lista desordenada -->
                 <ul>
-                    <li><strong><kbd>-l</kbd></strong> Esta bandera lista los archivos de un directorio como una <strong>lista</strong> y muestra algunos detalles importantes, como por ejemplo: Tipo de archivo (<strong>d</strong>, -, l), permisos, propietario, tamaño fechas de creación, etc</li>
+                    <li><strong><kbd>-l</kbd></strong> Esta bandera lista los archivos de un directorio como una <strong>lista</strong> y muestra algunos detalles importantes, como por ejemplo: Tipo de archivo (<strong>d</strong>, -, l), permisos, propietario, tamaño, fechas de creación, etc</li>
                     <pre><strong>d</strong>rwxr-xr-x 2 joaqnjs joaqnjs 4096 ago 25 13:21</pre>
                     <li><strong><kbd>-t</kbd></strong> Esta nos ordena los archivos desde los más recientes hasta los más viejos (según su fecha de creación)</li>
-                    <p><strong>Nota:</strong> Las banderas se pueden concatenar (no en todos los comandos funcionan) escribiendo despúes del guión (<strong>-</strong>) las banderas, por ejemplo: <strong>-lt</strong></p>
-                    <li><strong><kbd>-r</kbd></strong> Esta bandera revierte las funciones de las banderas anteriores, por ejemplo: <strong>-ltr</strong> listaría los archivos y directorios desde el más antiguo al más reciente</li>
+                    <p><strong>Nota:</strong> Las banderas se pueden concatenar (no en todos los comandos funcionan) escribiendo despúes del guión (<strong>-</strong>) las banderas, por ejemplo: <strong><kbd>-lt</kbd></strong></p>
+                    <li><strong><kbd>-r</kbd></strong> Esta bandera revierte las funciones de las banderas anteriores, por ejemplo: <strong><kbd>-ltr</kbd></strong> listaría los archivos y directorios desde el más antiguo al más reciente</li>
                     <li><strong><kbd>-h</kbd></strong> Esta bandera ("legible humanamente") nos muestra el tamaño de los archivos en <strong>Bites, Kilobytes, Megabytes, etc</strong></li>
-                    <li><strong><kbd>-S</kbd></strong> Esta bandera ordena los archivos y/o directorios desde el más pesado al menos pesado, un buen uso sería: <strong>-lhS</strong> de esta forma estarías <strong>listando</strong>, <strong>mostrando el tamaño</strong> de una forma legible (para un humano) y <strong>ordenandolos</strong></li>
+                    <li><strong><kbd>-S</kbd></strong> Esta bandera ordena los archivos y/o directorios desde el más pesado al menos pesado, un buen uso sería: <strong><kbd>-lhS</kbd></strong> de esta forma estarías <strong>listando</strong>, <strong>mostrando el tamaño</strong> de una forma legible (para un humano) y <strong>ordenandolos</strong></li>
                 </ul>
             </li>
-            <p><strong>Nota:</strong> Una bandera es una instrucción extra que se le da a un comando en especifico para realizar una tarea más detallada, por elemplo: <strong>ls -l</strong></p>
+            <p><strong>Nota:</strong> Una bandera es una instrucción extra que se le da a un comando en especifico para realizar una tarea más detallada, por elemplo: <strong><kbd>ls -l</kbd></strong></p>
             <li><strong><kbd>cd</kbd></strong> Nos ayuda a movernos entre directorios, con <strong>TAB</strong> podemos ver los archivos o directorios existentes (en la ubicación)</li>
             <li><strong><kbd>du -h</kbd></strong> Muestra el peso total de los directorios</li>
             </ul>
+
+            <!-- Segunda clase -->
+            <h3>Creación de directorios, mover, copiar, y renombrar archivos</h3>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong><kbd>mkdir</kbd></strong> Crea un nuevo directorio</li>
+                <li><strong><kbd>touch</kbd></strong> Abre el archivo y lo cierra, también con este comando se puede crear un archivo (incluso hasta se le puede añadir la extensión), por ejemplo: <strong><kbd>touch index.html</kbd></strong></li>
+                <li><strong><kbd>mv</kbd></strong> Mueve un archivo o un directorio, por ejemplo: <strong><kbd>mv ../photo.jpg /.</kbd></strong></li>
+                <li><strong><kbd>cp</kbd></strong> Copia un archivo o un directorio, por ejemplo: <strong><kbd>cp ./photo.jpg ../</kbd></strong></li>
+                <p><strong>Nota:</strong> Colocar un <strong><kbd>*</kbd></strong> (asterisco) seguido de un formato nos ayuda a ejecutar un comando a todo los archivos con esa extensión, puede ser, moverlos, copiarlos, borrarlos, etc</p>
+                <li><strong>Renombrar archivos:</strong> Sí utilizamos el comando <strong><kbd>mv</kbd></strong> y movemos el archivo a la misma dirección pero con otro nombre esto le cambia el nombre, por ejemplo: <strong><kbd>mv ./photo.jpg ./foto.jpg</kbd></strong></li>
+            </ul>
+
+            <!-- Tercera clase -->
+            <h3>Links (Referencia de un archivo o directorio) y eliminar elementos desde la terminal</h3>
+            <!-- Lista desordenada -->
+
+            <ul>
+            <li><strong><kbd>ln -s</kbd></strong> Crea un link (un vinculo), por ejemplo: <strong><kbd>ln -s /media/joaqnjs/Files/Dropbox /home/joaqnjs/</kbd></strong></li>
+            <li><strong><kbd>rm</kbd></strong> ¡ATENCIÓN! <strong>ESTE ES EL COMANDO MÁS PELIGROSO DE UNIX</strong> no pregunta si deseas eliminar un directorio o archivo, simplemente lo elimina y ya, más nunca se recupera <strong>¡se eliminó!</strong></li>
+                <!-- Lista desordenada -->
+                <ul>
+                    <li><strong><kbd>-rf</kbd></strong> Elimina recursivamente todo, incluso los directorios. En pocas palabras <strong>elimina todo en lo absoluto</strong></li>
+                </ul>
+                <p><strong>Nota "MUY IMPORTANTE":</strong> Sí escribes en una terminal el comando <strong><kbd>rm</kbd></strong> seguido del directorio raíz <strong><kbd>/</kbd></strong> y presionas <strong>enter</strong> eliminas el sistema ¡lo eliminas! ¡fin!, ten mucha precaución con el comando <strong><kbd>rm /</kbd></strong></p>
+            </ul>
+
+            <!-- Cuarta clase -->
+            <h3>Programas disponibles desde la terminal: <strong>bc, md5, more, tail, cat, wc</strong></h3>
+            <!-- Lista desordenada -->
+            <ul>
+            <li><strong><kbd>bc</kbd></strong> Es una calculadora. Para salir <strong><kbd>quit</kbd></strong></li>
+            <p><strong>Nota:</strong> Una bandera muy práctica de <strong><kbd>bc</kbd></strong> es <strong><kbd>-q</kbd></strong>, esta nos ayuda a "omitir el mensaje de bienvenida de dicha calculadora" y nos manda directamente a ejecutar operaciones</p>
+            <li><strong><kbd>open</kbd></strong> Abre un archivo con el programa que el sistema crea más conveniente.</li>
+            <p><strong>Nota:</strong> A el comando <strong><kbd>open</kbd></strong> se le puede agregar una bandera para especificar el programa que deseas para abrir el archivo, esa bandera es: <strong><kbd>-a</kbd></strong> seguido del programa, por ejemplo: <strong><kbd>open -a subl file.txt</kbd></strong></p>
+            <li><strong><kbd>mb5</kbd></strong> Muestra la huella digital de un archivo (existen mejores, claro esta)</li>
+            <li><strong><kbd>more</kbd></strong> Imprime una parte de un archivo (para leerlo desde la terminal). Para salir se presiona la letra <strong><kbd>q</kbd></strong></li>
+            <li>
+                <strong><kbd>tail</kbd></strong> Imprime las últimas 10 líneas del archivo.
+                <!-- Lista desordenada -->
+                <ul>
+                    <li><strong><kbd>-20</kbd></strong> Esta bandera muestra las últimas 20 líneas (se puede imprimir el número deseado)</li>
+                    <li><strong><kbd>-f</kbd></strong> Esta bandera mantiene activamente en modo <strong>"de escuchar"</strong> un archivo, esto sirve para desarrollar, muestra logs, etc.</li>
+                </ul>
+            </li>
+            <li><strong><kbd>cat</kbd></strong> Es concatenación. Imprime todo el archivo, a diferencia de <strong><kbd>more</kbd></strong> es que no lo página</li>
+            <li>
+                <strong><kbd>wc</kbd></strong> Cuenta el número de líneas, palabras y caracteres
+                <!-- Lista desordenada -->
+                <ul>
+                    <li><strong><kbd>-l</kbd></strong> Esta bandera muestra todas las líneas que tiene</li>
+                    <li><strong><kbd>-w</kbd></strong> Esta bandera muestra todas las palabras que tiene</li>
+                    <li><strong><kbd>-c</kbd></strong> Esta bandera muestra todos los caracteres que tiene</li>
+                </ul>
+            </li>
+            </ul>
+
+            <!-- Quinta clase -->
+            <h3>Documentación disponible desde la terminal <strong>(man)</strong></h3>
+            <!-- Lista desordenada -->
+            <ul>
+            <li><strong><kbd>man</kbd></strong> Significa <strong>Manual</strong> Este comando seguido de otro nos explica para que funciona un comando y nos dice las banderas que tiene.</li>
+            <p><strong>Nota:</strong> Es importante saber que este comando no depende de Internet</p>
+            </ul>
+
+            <!-- Sexta clase -->
+            <h3>Monitoreo de procesos desde la Terminal</h3>
+            <!-- Lista desordenada -->
+            <ul>
+            <li><strong><kbd>echo</kbd></strong> Imprime algo, por ejemplo: <strong><kbd>echo $PATH</kbd></strong></li>
+            <li><strong><kbd>which</kbd></strong> Muestra la ruta del programa que se esta ejecutando, por ejemplo: <strong>which bc</strong></li>
+            <p><strong>Nota:</strong> No confundir <strong>banderas</strong> con <strong>parámetros</strong> (estos son del sistema, por ejemplo: "los directorios en el comando <strong><kbd>mv</kbd></strong>"</p>
+            <li><strong><kbd>top</kbd></strong> Muestra un estatus del sistema (en tiempo real), se puede ordenar según CPU, MEM, etc (presiona la letra <strong>o</strong> seguido de la manera en que quiere medir).</li>
+            <p><strong>Nota:</strong> Cada proceso tiene su propio <strong>PID</strong> (Identificación de Proceso)</p>
+            <li><strong>Para eliminar un proceso:</strong> <strong><kbd>Ctrl + C</kbd></strong></li>
+            <li><strong>Para correr un comando en el background:</strong> Se usa el <strong><kbd>&</kbd></strong> al final de la línea</li>
+            <li><strong>Para matar un proceso en el background:</strong> Se usa <strong><kbd>kill -9</kbd></strong> seguido de su <strong>PID</strong></li>
+            <li><strong><kbd>ps -wA</kbd></strong> Lista los procesos sin interactividad</li>
+            <li><strong>Para saber el Output del proceso ejecutado anteriormente:</strong> <strong><kbd>echo $?</kbd></strong>, si el estatus es diferente a <strong>0 (cero)</strong> es porque el proceso no finalizó de forma correcta.</li>
+            </ul>
+
+            <!-- Séptima clase -->
+            <h3>Standard Input, Output and error</h3>
+            <!-- Lista desordenada -->
+            <ul>
+            <li><strong>Mayor que <strong><kbd>></kbd></strong>:</strong> Manda todas las salidas output a un archivo, sí el archivo no existe lo crea, sí existe lo reescribe añadiéndole líneas nuevas (con la información de la operación realizada).</li>
+            <li><strong>Menor que <strong><kbd><</kbd></strong>:</strong> Lee un archivo y manda el output a un programa que lo leerá ese resultado como input.</li>
+            <li><strong>Mayor, mayor que <strong><kbd>>></kbd></strong>:</strong> Tiene la misma función que <strong><kbd>></kbd></strong> con la diferencia que este suma, concatena los resultados en un archivo.</li>
+            <li><strong>Para concatenar Outputs <strong><kbd>|</kbd></strong>:</strong> Se usa <strong><kbd>|</kbd></strong>, por ejemplo: <strong><kbd>cat file.txt | bc -q</kbd></strong> (esto leerá el archivo "file.txt" y luego lo ejecutará con el programa <strong><kbd>bc</kbd></strong> sin mostrar "el mensaje de bienvenida" ya que la bandera <strong><kbd>-q</kbd></strong> omite eso).</li>
+            </ul>
+
+            <!-- Octava clase -->
+            <h3>Búsqueda de contenido en archivos, carpetas, y uso de Grep</h3>
+            <!-- Lista desordenada -->
+            <ul>
+            <li><strong><kbd>grep "[texto]" [archivo o directorio]</kbd></strong> Busca dentro de un archivo una cadena de texto ("string"), por ejemplo: <strong><kbd>grep "joaqnjs"</kbd></strong> (en un archivo csv).</li>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong><kbd>-r</kbd></strong> Esta bandera sirve para buscar recursivamente</li>
+                <li><strong><kbd>-e</kbd></strong> Esta bandera determina la expresión a buscar</li>
+                <p><strong>La mejor forma de usar estas banderas es:</strong> Tomando ambas banderas y el comando <strong><kbd>grep</kbd></strong> nos podemos ubicar en un directorio con diferentes archivos en el y buscar "una cadena de string" entre cada uno de ellos, por ejemplo: <strong><kbd>grep -r ./ -e joaqnjs</kbd></strong></p>
+                <li><strong><kbd>-n</kbd></strong> Esta bandera nos muestra el nombre del archivo y la línea</li>
+                <li><strong><kbd>-v</kbd></strong> Esta bandera busca una cadena de string y si la encuentra no la imprime, es decir, imprime las <strong>no coincidencias</strong></li>
+                <p><strong><kbd>^</kbd></strong> Indica el inicio (o desde el inicio) de línea</p>
+                <p><strong><kbd>$</kbd></strong> Indica el fin (o hasta el fin) de línea</p>
+            </ul>
+            <li><strong><kbd>find [directorio] -name "[texto]"</kbd></strong> Busca por nombre de archivos.</li>
+            <ul>
+                <li><strong><kbd>-type f</kbd></strong> Especifica que es un archivo.</li>
+                <li><strong><kbd>-exec [comando]</kbd></strong> Al finalizar la busqueda ejecuta un comando. Un comando para renombrar todos los archivos que coincidan es: <strong><kbd>mv {} {}.txt \:</kbd></strong> Las llaves hacen referencia al archivo que se encontró {}.</li>
+            </ul>
+            <li><strong><kbd>split -l [cantidad de líneas] [archivo] [destino]</kbd></strong> Rompe un archivo en la cantidad de líneas que se determine y los resultados lo guarda en un destino.</li>
+            </ul>
+
         </section>
     </div>
 
