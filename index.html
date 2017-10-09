@@ -161,6 +161,45 @@
             </ul>
 
         </section>
+
+        <section>
+            <h2>Complementos del curso</h2>
+            <!-- Complemento del curso -->
+            <!-- Curl -->
+            <h3>Peticiones <strong>HTTP</strong> desde la terminal con <strong>curl</strong></h3>
+            <p><strong><kbd>curl https://www.google.co.ve<kbd></strong> Trae todo el código <strong>html</strong> y lo muestra en la terminal.</p>
+            <!-- Lista desordenada -->
+            <ul>
+            <li><strong><kbd>-o</kbd></strong> Esta bandera guarda en un archivo (que si no existe lo crea) el output de la operación con <strong>curl</strong>, por ejemplo: <strong>curl -o google.html https://www.google.co.ve</strong></li>
+            <li><strong><kbd>-O</kbd></strong> Trae un archivo y lo descarga desde la web</li>
+            <li><strong>Método get:</strong> <strong><kbd>curl http://httpbin.org/get?variable=1</kbd></strong></li>
+            <li><strong>Método get "con más de 1 variable":</strong> <strong><kbd>curl "http://httpbin.org/get?variable=1&constante=10"</kbd></strong></li>
+            <li><strong>Método post:</strong> <strong><kbd>curl --data "numOne=1&numTwo=2" http://httpbin.org/post</kbd></strong></li>
+            <p>"form": { "numOne": 1, "numTwo": 2 }</p>
+            <p><strong>Nota:</strong> Para cambiar el <strong>User-Agent</strong> se hace con la bandera <strong><kbd>-A</kbd></strong> seguido del "nombre del agente", por ejemplo: <strong><kbd>curl -A "Agente_JoAQNjs"</kbd></strong></p>
+            </ul>
+            <!-- Crontab -->
+            <h3>crontab</h3>
+            <p>Con <strong><kbd>crontab -e</kbd></strong> se programan tareas que se ejecuta según sea especificado mientras la computadora esta encendida, mientras el sistema este operando.</p>
+            <!-- Lista desordenada -->
+            <ul>
+                <li><strong><kbd>-l</kbd></strong> Imprime los crontabs existente, instalados en un usuario. Cada usuario del sistema tiene un <strong><kbd>crontab</kbd></strong> diferente.</li>
+            </ul>
+            <p>El <strong>Crontab</strong> esta compuesto por 5 valores importantes:</p>
+            <pre>
+             ┌───────────── minute (0 - 59)
+             │ ┌───────────── hour (0 - 23)
+             │ │ ┌───────────── day of month (1 - 31)
+             │ │ │ ┌───────────── month (1 - 12)
+             │ │ │ │ ┌───────────── day of week (0 - 6) (Domingo a Sábado; 7 es también Domingo en algunos sistemas)
+             │ │ │ │ │
+             │ │ │ │ │
+             * * * * *  [Comando a ejecutar o script.sh]</pre>
+
+            <p>Un Script de ejemplo sería el de guardar la fecha cada minuto, todos los dias a las 12 horas (formato 24h).</p>
+            <pre>* 12 * * * date >> /tmp/date</pre>
+            <p>En el directorio <strong>/etc/cron.[frecuencia]</strong> existen una serie de archivos, en ellos se puede configurar algún script (o comando) que necesitemos ejecutar con "equis" frecuencia, de esta forma el <strong>Crontab</strong> queda guardado de forma permanente.</p>
+        </section>
     </div>
 
     <!-- Pie de página -->
