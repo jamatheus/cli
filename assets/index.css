@@ -1,8 +1,16 @@
+* {
+    font-family: 'Quicksand', monospace;
+}
+
 div.jumbotron {
             background-image: url('cli.png');
             background-position: top;
             background-color: #222d33;
         }
+                section {
+                    font-size: 1.4em;
+                }
+                    
             .white {
                 color: white !important;
             }
@@ -26,7 +34,18 @@ div.jumbotron {
                                         padding: 2px 6px;
                                         font-size: 95%;
                                         background-color: #222d33;
+                                        font-weight: bold;
                                     }
-                                        blockquote p {
-                                            font-size: .8em;
-                                        }
+                                                blockquote p {
+                                                    font-size: .8em;
+                                                }
+                                                    section strong {
+                                                        color: #222d33;
+                                                    }
+                                                        .img-responsive {
+                                                            margin: 0 auto;
+                                                            padding: 12px;
+                                                        }
+                                                            h1, h2, h3, h4, h5, h6 {
+                                                                font-family: 'Alegreya+Sans', sans-serif;
+                                                            }

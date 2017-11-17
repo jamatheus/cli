@@ -11,6 +11,7 @@
     <link rel="mask-icon" href="assets/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="assets/index.css">
 </head>
 <body>
@@ -186,24 +187,30 @@
                 <li><strong><kbd>-l</kbd></strong> Imprime los crontabs existente, instalados en un usuario. Cada usuario del sistema tiene un <strong><kbd>crontab</kbd></strong> diferente.</li>
             </ul>
             <p>El <strong>Crontab</strong> esta compuesto por 5 valores importantes:</p>
-            <pre>
-             ┌───────────── minute (0 - 59)
-             │ ┌───────────── hour (0 - 23)
-             │ │ ┌───────────── day of month (1 - 31)
-             │ │ │ ┌───────────── month (1 - 12)
-             │ │ │ │ ┌───────────── day of week (0 - 6) (Domingo a Sábado; 7 es también Domingo en algunos sistemas)
-             │ │ │ │ │
-             │ │ │ │ │
-             * * * * *  [Comando a ejecutar o script.sh]</pre>
+<pre>
+    ┌───────────── minute (0 - 59)
+    │ ┌───────────── hour (0 - 23)
+    │ │ ┌───────────── day of month (1 - 31)
+    │ │ │ ┌───────────── month (1 - 12)
+    │ │ │ │ ┌───────────── day of week (0 - 6) (Domingo a Sábado; 7 es también Domingo en algunos sistemas)
+    │ │ │ │ │
+    │ │ │ │ │
+    * * * * *  [Comando a ejecutar o script.sh]
+</pre>
 
             <p>Un Script de ejemplo sería el de guardar la fecha cada minuto, todos los dias a las 12 horas (formato 24h).</p>
             <pre>* 12 * * * date >> /tmp/date</pre>
             <p>En el directorio <strong>/etc/cron.[frecuencia]</strong> existen una serie de archivos, en ellos se puede configurar algún script (o comando) que necesitemos ejecutar con "equis" frecuencia, de esta forma el <strong>Crontab</strong> queda guardado de forma permanente.</p>
         </section>
+    <section>
+        <div id="disqus_thread" class="disqus"></div>
+    </section>
     </div>
+
 
     <!-- Pie de página -->
     <footer>
+        <!-- Sobre el autor @JoaquinAraujoJS -->
         <div class="container">
             <div class="row">
                 <div class="col-sm-8">
@@ -222,5 +229,23 @@
             <p class="text-center white">Esta guía fue realizada por <a href="https://twitter.com/JoaquinAraujoJS" target="_blank" class="white">Joaquin Araujo</a> y es un resumen del <a href="https://platzi.com/cursos/terminal/" target="_blank" class="white">Curso de Introdución a la Terminal y Línea de Comandos</a> de <a href="https://platzi.com" target="_blank" class="white">Platzi</a></p>
         </div>
     </footer>
+
+    <!-- Caja de comentarios Disqus (Script) -->
+    <script>
+    var disqus_config = function () {
+        this.page.url = 'https://joaquinaraujo.github.io';
+        this.page.identifier = window.location.pathname;
+        this.page.title = 'Curso de Introdución a la Terminal y Línea de Comandos';
+    };
+
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://joaquin-araujo.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Por favor, active JavaScript para ver el <a href="https://disqus.com/?ref_noscript">comentarios impulsados por Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="https://joaquin-araujo.disqus.com/count.js" async></script>
 </body>
 </html>
